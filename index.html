@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta charset="utf-8">
 		<style type="text/css">
 			fieldset {
 				background: lightyellow;
@@ -7,7 +8,7 @@
 				margin-bottom: 10px;
 				width: 720px;
 			}
-			label:not(.sub) {
+			label:not(.sublable) {
 				display: inline-block;
 				width: 180px;
 				text-align: right;
@@ -15,9 +16,19 @@
 			}
 			span {
 				display: inline-block;
-				width:0px;
+				width: 35px;
 				text-align: center;
-				margin: 0;				
+				padding: 5px 10px;
+				margin: -5px auto;
+			}
+			.min {background: red;}
+			.max {background: purple;}
+			input[type="range"]{
+				margin: 0 2px;
+			}
+			textarea {
+				width: 360px;
+				height:50px
 			}
 		</style>
 	</head>
@@ -40,10 +51,10 @@
 				<input type="text" id="name" name="name" placeholder="Your full name" required><br>
 				
 				<label for="gender">Gender:</label>
-				<label class="sub">
+				<label class="sublable">
 					<input type="radio" id="gender" name="gender" value="male" required>Male
 				</label>
-				<label class="sub">
+				<label class="sublable">
 					<input type="radio" name="gender" value="female" required>Female
 				</label><br>
 				
@@ -71,17 +82,11 @@
 			<fieldset>
 				<legend>Your Indicators</legend>
 				
-				<div>
-					<label for="height">Height:</label>
-					<span class="min">Short<span>
-					<input type="range" id="height" name="height">
-					<span class="max">Tall</span>
-				</div>
-				
+				<label for="height">Height:</label>
+				<span class="min">Short</span><input type="range" id="height" name="height"><span class="max">Tall</span><br>
+			
 				<label for="salary">Salary:</label>
-				<span class="min">Poor</span>
-				<input type="range" id="salary" name="salary">
-				<span class="max">Rich</span>	
+				<span class="min">Poor</span><input type="range" id="salary" name="salary"><span class="max">Rich</span>	
 			</fieldset>
 			
 			<fieldset>
@@ -97,9 +102,9 @@
 				<textarea id="address" name="address"></textarea><br>
 
 				<label for="email">Method to contact you:</label>
-				<label class="sub"><input type="checkbox" id="email" name="conactMethod" value="email">Email</label>
-				<label class="sub"><input type="checkbox" name="conactMethod" value="whatsapp">Whatsapp</label>
-				<label class="sub"><input type="checkbox" name="conactMethod" value="inAppChat">In-app chat</label>
+				<label class="sublable"><input type="checkbox" id="email" name="conactMethod" value="email">Email</label>
+				<label class="sublable"><input type="checkbox" name="conactMethod" value="whatsapp">Whatsapp</label>
+				<label class="sublable"><input type="checkbox" name="conactMethod" value="inAppChat">In-app chat</label>
 			</fieldset>
 			<input type="submit" value="Submit!">
 		</form>
